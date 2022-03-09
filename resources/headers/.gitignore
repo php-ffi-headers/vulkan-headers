@@ -1,14 +1,4 @@
 *
 !.gitignore
 !1.3.207/
-!platform/windows.h
-!platform/wayland-client.h
-!platform/directfb.h
-!platform/zircon/types.h
-!platform/xcb/xcb.h
-!platform/xcb/xproto.h
-!platform/X11/X.h
-!platform/X11/XLib.h
-!platform/X11/extensions/Xrandr.h
-!platform/screen/screen.h
-!platform/ggp_c/vulkan_types.h
+!platform/*
