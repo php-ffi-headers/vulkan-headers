@@ -80,10 +80,7 @@ class Vulkan implements HeaderInterface
         $pre->add('stddef.h', '');
         $pre->add('stdint.h', '');
 
-        $pre->include(self::HEADERS_DIRECTORY);
-
         if ($platform !== null) {
-            $pre->include(self::HEADERS_DIRECTORY . '/platform');
             $pre->define($platform->value, '1');
         }
 
@@ -99,6 +96,9 @@ class Vulkan implements HeaderInterface
         if (!$version instanceof VersionInterface) {
             $version = Version::create($version);
         }
+
+        $pre->include(self::HEADERS_DIRECTORY . '/platform');
+        $pre->include(self::HEADERS_DIRECTORY . '/' . $version->toString());
 
         return new self($pre, $version);
     }
