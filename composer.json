@@ -1,0 +1,59 @@
+{
+    "name": "ffi-headers/vulkan-headers",
+    "type": "library",
+    "description": "PHP FFI Vulkan Headers",
+    "license": "MIT",
+    "keywords": ["ffi", "headers", "vulkan", "c", "graphic", "vk", "video"],
+    "support": {
+        "source": "https://github.com/php-ffi-headers/vulkan-headers",
+        "issues": "https://github.com/php-ffi-headers/vulkan-headers/issues",
+        "docs": "https://github.com/php-ffi-headers/vulkan-headers/blob/master/README.md"
+    },
+    "authors": [
+        {
+            "name": "Nesmeyanov Kirill",
+            "email": "nesk@xakep.ru",
+            "homepage": "https://serafimarts.ru",
+            "role": "maintainer"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-phar": "*",
+        "ffi-headers/contracts": "^1.0",
+        "ffi/preprocessor": "^0.2.1|^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "FFI\\Headers\\": "src"
+        }
+    },
+    "require-dev": {
+        "ffi/env": "^0.1|^1.0",
+        "ffi/location": "^0.1|^1.0",
+        "vimeo/psalm": "^4.22.0",
+        "phpunit/phpunit": "^9.5.15"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FFI\\Headers\\Vulkan\\Tests\\": "tests"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "phing/phing-composer-configurator": false
+        }
+    },
+    "provide": {
+        "ffi-headers/contracts-implementation": "^1.0"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
