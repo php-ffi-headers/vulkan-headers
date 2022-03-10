@@ -29,6 +29,11 @@ class Vulkan implements HeaderInterface
     private const HEADERS_DIRECTORY = __DIR__ . '/../resources/headers';
 
     /**
+     * @var non-empty-string
+     */
+    private const PLATFORM_HEADERS_DIRECTORY = __DIR__ . '/../resources/platform-headers';
+
+    /**
      * @param PreprocessorInterface $pre
      * @param VersionInterface $version
      */
@@ -97,8 +102,8 @@ class Vulkan implements HeaderInterface
             $version = Version::create($version);
         }
 
-        $pre->include(self::HEADERS_DIRECTORY . '/platform');
         $pre->include(self::HEADERS_DIRECTORY . '/' . $version->toString());
+        $pre->include(self::PLATFORM_HEADERS_DIRECTORY);
 
         return new self($pre, $version);
     }
@@ -114,8 +119,14 @@ class Vulkan implements HeaderInterface
         $prototypes->define('VKAPI_CALL');
 
         $result = [
-            $this->pre->process(new \SplFileInfo($this->getHeaderPathname())),
-            $prototypes->process(new \SplFileInfo(self::HEADERS_DIRECTORY . '/vulkan_prototypes_1.0.h')),
+            // vulkan.h
+            $this->pre->process(new \SplFileInfo(
+                $this->getHeaderPathname()
+            )),
+            // vulkan-v1.0 + VK_NO_PROTOTYPES = false
+            $prototypes->process(new \SplFileInfo(
+                self::PLATFORM_HEADERS_DIRECTORY . '/vulkan_prototypes_1.0.h'
+            )),
         ];
 
         return \implode(\PHP_EOL, $result) . \PHP_EOL;

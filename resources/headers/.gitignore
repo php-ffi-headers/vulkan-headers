@@ -1,6 +1,3 @@
 *
 !.gitignore
 !1.3.207/*
-!platform/*
-!platform/X11/*
-!vulkan_prototypes_1.0.h
