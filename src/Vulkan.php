@@ -109,9 +109,13 @@ class Vulkan implements HeaderInterface
      */
     public function __toString(): string
     {
+        $prototypes = clone $this->pre;
+        $prototypes->define('VKAPI_ATTR');
+        $prototypes->define('VKAPI_CALL');
+
         $result = [
             $this->pre->process(new \SplFileInfo($this->getHeaderPathname())),
-            $this->pre->process(new \SplFileInfo(self::HEADERS_DIRECTORY . '/vulkan_prototypes_1.0.h')),
+            $prototypes->process(new \SplFileInfo(self::HEADERS_DIRECTORY . '/vulkan_prototypes_1.0.h')),
         ];
 
         return \implode(\PHP_EOL, $result) . \PHP_EOL;
