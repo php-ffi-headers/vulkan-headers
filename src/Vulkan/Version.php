@@ -11,8 +11,15 @@ declare(strict_types=1);
 
 namespace FFI\Headers\Vulkan;
 
-enum Version: string implements VersionInterface
+use FFI\Contracts\Headers\Version as CustomVersion;
+use FFI\Contracts\Headers\Version\Comparable;
+use FFI\Contracts\Headers\Version\ComparableInterface;
+use FFI\Contracts\Headers\VersionInterface;
+
+enum Version: string implements ComparableInterface
 {
+    use Comparable;
+
     // ---- Version 1.1 (2018) ----
     case V1_1_96  = '1.1.96';  // 1.1-lowest
     case V1_1_130 = '1.1.130'; // 1.1-latest
@@ -38,23 +45,7 @@ enum Version: string implements VersionInterface
 
         return self::tryFrom($version)
             ?? $versions[$version]
-            ??= new class($version) implements VersionInterface {
-                /**
-                 * @param non-empty-string $version
-                 */
-                public function __construct(
-                    private string $version,
-                ) {
-                }
-
-                /**
-                 * {@inheritDoc}
-                 */
-                public function toString(): string
-                {
-                    return $this->version;
-                }
-            };
+            ??= CustomVersion::fromString($version);
     }
 
     /**

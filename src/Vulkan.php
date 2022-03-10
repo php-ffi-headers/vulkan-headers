@@ -12,13 +12,13 @@ declare(strict_types=1);
 namespace FFI\Headers;
 
 use FFI\Contracts\Headers\HeaderInterface;
+use FFI\Contracts\Headers\VersionInterface;
 use FFI\Contracts\Preprocessor\Exception\DirectiveDefinitionExceptionInterface;
 use FFI\Contracts\Preprocessor\Exception\PreprocessorExceptionInterface;
 use FFI\Contracts\Preprocessor\PreprocessorInterface;
 use FFI\Headers\Vulkan\HeadersDownloader;
 use FFI\Headers\Vulkan\Platform;
 use FFI\Headers\Vulkan\Version;
-use FFI\Headers\Vulkan\VersionInterface;
 use FFI\Preprocessor\Preprocessor;
 
 class Vulkan implements HeaderInterface
