@@ -28,4 +28,17 @@ final class ContentRenderingTestCase extends TestCase
 
         (string)Vulkan::create($platform, true, $version);
     }
+
+    /**
+     * @testdox Tests that header has correct PHP FFI syntax
+     *
+     * @depends testRenderable
+     * @dataProvider configDataProvider
+     */
+    public function testCompilation(Platform $platform, Version $version): void
+    {
+        $this->assertHeadersSyntaxValid(
+            Vulkan::create($version)
+        );
+    }
 }

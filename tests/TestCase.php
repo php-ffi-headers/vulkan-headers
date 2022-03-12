@@ -11,12 +11,15 @@ declare(strict_types=1);
 
 namespace FFI\Headers\Vulkan\Tests;
 
+use FFI\Headers\Testing\TestingTrait;
 use FFI\Headers\Vulkan\Platform;
 use FFI\Headers\Vulkan\Version;
 use PHPUnit\Framework\TestCase as BaseTestCase;
 
 abstract class TestCase extends BaseTestCase
 {
+    use TestingTrait;
+
     /**
      * @return array<array{Platform, Version}>
      */

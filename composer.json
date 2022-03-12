@@ -29,10 +29,8 @@
         }
     },
     "require-dev": {
-        "ffi/env": "^0.1|^1.0",
-        "ffi/location": "^0.1|^1.0",
-        "vimeo/psalm": "^4.22.0",
-        "phpunit/phpunit": "^9.5.15"
+        "ffi-headers/testing": "^1.0",
+        "vimeo/psalm": "^4.22"
     },
     "autoload-dev": {
         "psr-4": {
