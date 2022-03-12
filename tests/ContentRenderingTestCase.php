@@ -38,7 +38,7 @@ final class ContentRenderingTestCase extends TestCase
     public function testCompilation(Platform $platform, Version $version): void
     {
         $this->assertHeadersSyntaxValid(
-            Vulkan::create($version)
+            Vulkan::create($platform, true, $version)
         );
     }
 }
