@@ -20,6 +20,15 @@ abstract class TestCase extends BaseTestCase
 {
     use TestingTrait;
 
+    private const VERSION_CASES = [
+        Version::V1_1_LOWEST,
+        Version::V1_1_HIGHEST,
+        Version::V1_2_LOWEST,
+        Version::V1_2_HIGHEST,
+        Version::V1_3_LOWEST,
+        Version::V1_3_HIGHEST,
+    ];
+
     /**
      * @return array<array{Platform, Version}>
      */
@@ -28,7 +37,7 @@ abstract class TestCase extends BaseTestCase
         $result = [];
 
         foreach (Platform::cases() as $platform) {
-            foreach (Version::cases() as $version) {
+            foreach (self::VERSION_CASES as $version) {
                 $result[\sprintf('%s-%s', $platform->name, $version->value)] = [$platform, $version];
             }
         }
@@ -43,7 +52,7 @@ abstract class TestCase extends BaseTestCase
     {
         $result = [];
 
-        foreach (Version::cases() as $version) {
+        foreach (self::VERSION_CASES as $version) {
             $result[$version->toString()] = [$version];
         }
 
