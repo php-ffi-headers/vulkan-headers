@@ -7,7 +7,7 @@
 <p align="center">
     <a href="https://github.com/php-ffi-headers/vulkan-headers/actions"><img src="https://github.com/php-ffi-headers/vulkan-headers/workflows/build/badge.svg"></a>
     <a href="https://packagist.org/packages/ffi-headers/vulkan-headers"><img src="https://img.shields.io/badge/PHP-8.1.0-ff0140.svg"></a>
-    <a href="https://packagist.org/packages/ffi-headers/vulkan-headers"><img src="https://img.shields.io/badge/Vulkan-1.3.224-cc3c20.svg"></a>
+    <a href="https://packagist.org/packages/ffi-headers/vulkan-headers"><img src="https://img.shields.io/badge/Vulkan-1.3.225-cc3c20.svg"></a>
     <a href="https://packagist.org/packages/ffi-headers/vulkan-headers"><img src="https://poser.pugx.org/ffi-headers/vulkan-headers/version" alt="Latest Stable Version"></a>
     <a href="https://packagist.org/packages/ffi-headers/vulkan-headers"><img src="https://poser.pugx.org/ffi-headers/vulkan-headers/v/unstable" alt="Latest Unstable Version"></a>
     <a href="https://packagist.org/packages/ffi-headers/vulkan-headers"><img src="https://poser.pugx.org/ffi-headers/vulkan-headers/downloads" alt="Total Downloads"></a>

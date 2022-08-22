@@ -151,9 +151,10 @@ enum Version: string implements ComparableInterface
     case V1_3_222 = '1.3.222';
     case V1_3_223 = '1.3.223';
     case V1_3_224 = '1.3.224';
+    case V1_3_225 = '1.3.225';
 
     public const V1_3_LOWEST = self::V1_3_204;
-    public const V1_3_HIGHEST = self::V1_3_224;
+    public const V1_3_HIGHEST = self::V1_3_225;
 
     public const V1_LOWEST = self::V1_1_96;
     public const V1_HIGHEST = self::V1_3_HIGHEST;
